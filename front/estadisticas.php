@@ -1,6 +1,6 @@
 <?php
 include ("../../../inc/includes.php");
-include ('../inc/tablas.class.php');
+include ('../inc/activos.class.php');
 
 
 Session::checkLoginUser();
