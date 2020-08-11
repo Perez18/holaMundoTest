@@ -8,7 +8,8 @@
  */
 
 include ("../../../inc/includes.php");
-include ('../inc/misfunciones.php'); //aqui esta parte de la lógica
+include ('../inc/helpers.php'); //aqui esta parte de la lógica
+include ('../inc/tablas.class.php');
 
 Session::checkLoginUser();
 /* session_start();
@@ -27,7 +28,7 @@ if (!$plugin->isInstalled("holamundo") || !$plugin->isActivated("holamundo")) {
  Session::checkRight('plugin_holamundo', READ);
 
 
-$app = new PluginHolamundoIndex();
+$app = new tabla();
 
 Html::header(
    __('Hola Mundo' ,'holamundo'),
@@ -39,10 +40,11 @@ Html::header(
 
 //podriamos llamar a las funciones desde cualquier lado con include
 //printHolamundo(); ó  utilizamos la herencia de la clase index
-/* 
-add_css(); */
 
+helpers::AddCss();
 $app->formIndex();
+
+
 
 
 

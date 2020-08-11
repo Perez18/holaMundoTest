@@ -7,7 +7,7 @@
 */
 
 include("../../../inc/includes.php");
-include('../inc/misfunciones.php'); //aqui esta parte de la lógica
+include('../inc/helpers.php'); //aqui esta parte de la lógica
 
 Session::checkLoginUser();
 /* session_start ();*/
@@ -31,8 +31,8 @@ Html::header(
     "PluginHolamundoIndex"
 );
 
-printHolamundo2();
 
+helpers::printHolamundo2();
 
 
 

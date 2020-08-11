@@ -1,6 +1,6 @@
 <?php
-
 include ("../../../inc/includes.php");
+include ('../inc/tablas.class.php');
 
 
 Session::checkLoginUser();
@@ -27,7 +27,7 @@ Html::header(
 
 //aqui va lo que ve el usuario
 
-echo ("link listado de plugin");
+
 
 
 //$app->formIndex();

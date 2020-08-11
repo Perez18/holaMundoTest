@@ -36,9 +36,6 @@ class PluginHolamundoIndex extends CommonDBTM
 
    static function displayTabContentForItem(CommonGLPI $item, $tabnum = 1, $withtemplate = 0)
    {
-
-
-
       echo '<form action="../plugins/biblioteca/front/biblioteca.form.php" method="POST">';
       echo $item->getType();
       echo '<br>';
@@ -58,21 +55,7 @@ class PluginHolamundoIndex extends CommonDBTM
 
       return true;
    }
-   /**
-    * Show the form (menu->plugin->holamundo)
-    */
-   public function formIndex()
-   {
 
-      echo "<form action='' method='post'  > ";
-      echo '<div class="tab_cadre_fixe" style="box-shadow: 0 1px 8px #aaa;text-align:center;padding:1em;">';
-      echo "<h1>Ver holamundo</h1>";
-      echo "<p>...</p>";
-      echo "</div>";
-      html::closeForm();
-
-      $menu['icon'] = self::getIcon();
-   }
 
    static function getIcon()
    {
@@ -90,8 +73,23 @@ class PluginHolamundoIndex extends CommonDBTM
 
       //   $links['config'] = '/plugins/holamundo/front/link_cualquiera.php';
       //  $links["<img  src='".$CFG_GLPI["root_doc"]."/pics/menu_showall.png' title='".__s('Show all')."' alt='".__s('Show all')."'>"] = '/plugins/holamundo/front/link_cualquiera.php';
-      $links[__s('Ver Links', 'holamundo')] = '/plugins/holamundo/front/link_cualquiera.php';
+      $links[__s('Estadisticas', 'holamundo')] = '/plugins/holamundo/front/estadisticas.php';
 
       return $links;
    }
+   /**
+    * Show the form (menu->plugin->holamundo)      echo $item->getType();
+
+    */
+
+
+   public function formIndex()
+   {
+      echo "No tiene Identidad";
+      
+   }
+
+
+
+
 }
