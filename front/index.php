@@ -49,25 +49,26 @@ if (!isset($_GET['activo']) || $_GET['activo'] == null) {
 $activo = isset($_GET['activo']) ? trim($_GET['activo']) : false;;
 
 helpers::AddCss();
+helpers::AddJs();
+
 $app = new activos();
 
 switch ($activo) {
-   case 'computer':
+   case helpers::$types[0]: //computer
 
-
-      $app->SetAsset('computer');
+      $app->SetAsset(helpers::$types[0]);
       $app->formIndex();
 
       break;
 
-   case 'printer':
-      $app->SetAsset('printer');
+   case helpers::$types[1]: //Monitor
+      $app->SetAsset(helpers::$types[1]);
       $app->formIndex();
 
       break;
 
-   case 'monitor':
-      $app->SetAsset('monitor');
+   case helpers::$types[5]: //Printer
+      $app->SetAsset(helpers::$types[5]);
       $app->formIndex();
 
       break;

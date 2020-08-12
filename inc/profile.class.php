@@ -21,7 +21,7 @@ class PluginHolamundoProfile extends Profile {
         return array(
             array(
                 'itemtype' => 'PluginHolamundoProfile',
-                'label' => $LANG['plugin_holamundo']['manage_alerts'],
+                'label' => "hola Mundo",
                 'field' => 'plugin_holamundo'
             ),
         );
@@ -65,7 +65,7 @@ class PluginHolamundoProfile extends Profile {
     public function getTabNameForItem(CommonGLPI $item, $withtemplate = 0) {
         global $LANG;
         
-        return $LANG['plugin_holamundo']['title'];
+        return "Hola Mundo";
     }
 
     public function getFromDBByProfile($profiles_id) {
@@ -114,7 +114,7 @@ class PluginHolamundoProfile extends Profile {
         $profile->displayRightsChoiceMatrix($rights, array(
             'canedit' => $canedit,
             'default_class' => 'tab_bg_2',
-            'title' => $LANG['plugin_holamundo']['title'],
+            'title' => "Hola Mundo",
         ));
 
         if ($canedit) {

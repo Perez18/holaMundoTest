@@ -59,7 +59,7 @@ function plugin_version_holamundo()
     return array(
         'name' => __('Hola Mundo', 'holamundo'),
         'version' => '1.1.0',
-        'author' => "Alexander Chale",
+        'author' => "Anthony Perez",
         'license' => "GPLv2+",
         'homepage' => 'https://glpiconchale.blogspot.com',
         'minGlpiVersion' => '9.5' //aqui le digo que mi plugin va a trabajar con la versión minima de glpi

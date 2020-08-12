@@ -27,6 +27,7 @@ Html::header(
 
 //aqui va lo que ve el usuario
 
+echo "<h2>Estadisticas</h2>";
 
 
 

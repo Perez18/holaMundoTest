@@ -3,3 +3,10 @@
     font-size: 12px !important;
     cursor: default;
 }
+
+.red{
+
+    border-top: 2px outset #E13434 !important;
+    background: white !important;
+}
+

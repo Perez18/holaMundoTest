@@ -7,7 +7,6 @@
 */
 
 include("../../../inc/includes.php");
-include('../inc/helpers.php'); //aqui esta parte de la lógica
 
 Session::checkLoginUser();
 /* session_start ();*/
@@ -32,7 +31,7 @@ Html::header(
 );
 
 
-helpers::printHolamundo2();
+echo "<h2>FORMULARIO</h2>";
 
 
 

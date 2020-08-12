@@ -12,6 +12,9 @@ class helpers
 
    const URL_APLICACION = '../front/index.php';
 
+   static    $types = ['Computer', 'Monitor', 'NetworkEquipment', 'Peripheral',
+   'Phone', 'Printer', 'Software'];
+
 
    static function printHolamundo()
    { //agregado
@@ -60,43 +63,13 @@ class helpers
 
       echo ' <link rel="stylesheet" href="../css/holamundo.css">';
    }
-
-   static function getComputer()
+   static function AddJs()
    {
 
-      global $DB;
-
-      $query = "SELECT * FROM  glpi_computers ";
-      $result = self::queryResult($query);
-
-      return $result;
-
+      echo "<script src='../js/main.js'></script>  ";
    }
 
-   static function getPrinter()
-   {
-
-      global $DB;
-
-      $query = "SELECT * FROM  glpi_printers ";
-
-      $result = self::queryResult($query);
-
-      return $result;
-   }
-
-   static function queryResult($query)
-   {
-      global $DB;
-
-
-      $result = $DB->query($query);
-
-      if ($DB->numrows($result) > 0) {
-
-         return $DB->fetchAssoc($result);
-      }
-   }
 
    
 }
+
