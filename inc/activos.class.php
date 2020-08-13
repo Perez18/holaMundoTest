@@ -25,13 +25,17 @@ class activos extends PluginHolamundoIndex
     public function formIndex()
     {
 
-        echo '<div id="tabs495850716" class="center vertical ui-tabs ui-corner-all ui-widget ui-widget-content ui-tabs-vertical ui-helper-clearfix ui-corner-left" style="margin-top:20px;">';
+        echo '<div class="center vertical ui-tabs ui-corner-all ui-widget ui-widget-content ui-tabs-vertical ui-helper-clearfix ui-corner-left" style="margin-top:20px;">';
         echo  "<h1>" . ucwords($this->asset) . "</h1>";
         echo '<ul role ="tab" class="ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header">';
         $this->TableAsideDepreciacion();
         $this->TableAsideAmortizacion();
         echo '</ul>';
-        $this->TableInformation();
+        if ($this->asset == "inicio") {
+            echo  "<i class ='" . self::getIcon() . "'></i>";
+        } else {
+            $this->TableInformation();
+        }
         echo "</div>";
         html::closeForm();
 
@@ -42,17 +46,37 @@ class activos extends PluginHolamundoIndex
 
     public function TableInformation()
     {
-        global $DB;
         /*         $dbu = new DbUtils();
         echo $dbu->countElementsInTable('glpi_computers',['id' => '1']);
- */
-        var_dump($this->getDBAll());
+       var_dump($this->getDBAll());     */
+
+        global $DB;
 
         $result =  $this->getDBAll();
         $domains = [];
         $used    = [];
 
-        echo '<table class="tab_cadre_fixe">';
+
+
+        echo '<table id ="myTable" class="tab_cadre_fixe" style="width: 80%; font-size:12px;" >';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th scope="col">#</th>';
+        echo '<th scope="col">Nombre</th>';
+        echo '       <th scope="col">No Factura</th>';
+        echo '       <th scope="col">Fecha Compra</th>';
+        echo '       <th scope="col">Vida Util</th>';
+        echo '       <th scope="col">valor</th>';
+        echo '       <th scope="col">Valor Neto</th>';
+        echo '       <th scope="col">Compañia</th>';
+        echo '       <th scope="col">Centro Costo</th>';
+        echo '       <th scope="col">Usuario</th>';
+        echo '       <th scope="col">Grafica</th>';
+        echo '       <th scope="col">glpi</th>';
+        echo '    </tr>';
+        echo ' </thead>';
+        echo ' </table>';
+        /*       echo '<table id ="tab_information" class="tab_cadre_fixe">';
         echo '<thead>';
         echo '<tr  class="tab_bg_2">';
         echo '<th scope="col">#</th>';
@@ -85,6 +109,7 @@ class activos extends PluginHolamundoIndex
 
         echo ' </tbody>';
         echo ' </table>';
+ */
     }
 
 
@@ -94,9 +119,9 @@ class activos extends PluginHolamundoIndex
 
 
         echo "<li class='tab-depreciacion ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href='#'>Depreciacion</a></li>";
-        echo "<li class='asset ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href= '" . self::getLinks(helpers::$types[0])."'>".helpers::$types[0]."</a></li>";
-        echo "<li class='asset ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href='" . self::getLinks(helpers::$types[1]) . "'>".helpers::$types[1]."</a></li>";
-        echo "<li class='asset ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href='" . self::getLinks(helpers::$types[5]) . "'>".helpers::$types[5]."</a></li>";
+        echo "<li class='asset ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href= '" . self::getLinks(helpers::$types[0]) . "'>" . helpers::$types[0] . "</a></li>";
+        echo "<li class='asset ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href='" . self::getLinks(helpers::$types[1]) . "'>" . helpers::$types[1] . "</a></li>";
+        echo "<li class='asset ui-tabs-tab ui-corner-top ui-state-default ui-tab'> <a class='ui-tabs-anchor' href='" . self::getLinks(helpers::$types[5]) . "'>" . helpers::$types[5] . "</a></li>";
     }
 
 

@@ -1,18 +1,17 @@
 "use strict";
 
 $("document").ready(() => {
-  console.log("Jquery Cargado");
+  console.log(CFG_GLPI);
 
   var tabla = $(".asset");
   var acumulador = "";
   var typeBefore = "";
 
-  console.log(tabla);
+  console.log(location.href);
 
   for (let index = 0; index < tabla.length; index++) {
     var element = tabla[index];
 
-    console.log(acumulador);
     $(element).click(function (e) {
       e.preventDefault();
       let that = this;
@@ -24,8 +23,21 @@ $("document").ready(() => {
         $(that).addClass("red");
         typeBefore = that;
 
-        console.log(typeBefore);
-      } 
+        $("#tab_information").load(" #tab_information");
+      }
     });
   }
+
+  $("#myTable").DataTable({
+    Reponsive: true,
+    sirverSide: true,
+    ajax: {
+      url: "../inc/serverside.php",
+      type: "POST",
+    },
+    columns: [
+      ["data", "name"],
+      ["data", "serial"],
+    ],
+  });
 });

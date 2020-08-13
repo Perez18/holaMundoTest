@@ -62,14 +62,19 @@ class helpers
    {
 
       echo ' <link rel="stylesheet" href="../css/holamundo.css">';
+/*       echo '<link rel="stylesheet" type="text/css" href="../js/datatables/datatables.min.css"/>';
+ */       
    }
    static function AddJs()
    {
 
       echo "<script src='../js/main.js'></script>  ";
+      echo '<script type="text/javascript" src="../js/datatables/datatables.min.js"></script>';
+ 
+
    }
 
 
    
 }
-
+?>

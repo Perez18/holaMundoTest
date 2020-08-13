@@ -8,8 +8,11 @@
  */
 
 include("../../../inc/includes.php");
+include('../inc/serverside.php'); //aqui esta parte de la lógica
 include('../inc/helpers.php'); //aqui esta parte de la lógica
 include('../inc/activos.class.php');
+
+
 
 Session::checkLoginUser();
 /* session_start();
